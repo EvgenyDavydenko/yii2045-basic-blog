@@ -64,4 +64,29 @@ class BlogController extends Controller
             'pagination' => $pagination,
         ]);
     }
+
+    public function actionSearch($id)
+    {
+        $query = Post::find()->where(['like','title', $id]);
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 5,
+            'totalCount' => $query->count(),
+        ]);
+
+        //$id = \Yii::$app->request->get('id');
+        $posts = $query->orderBy('id')        
+        ->offset($pagination->offset)
+        ->limit($pagination->limit)
+        ->all();
+
+        if ($posts === null) {
+            throw new NotFoundHttpException;
+        }
+        return $this->render('index', [
+            'posts' => $posts,
+            'pagination' => $pagination,
+        ]);
+
+    }
 }
