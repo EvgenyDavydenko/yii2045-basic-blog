@@ -5,12 +5,13 @@
         <h1 class="my-4">
             Page Heading
         </h1>
+        <?php foreach ($posts as $post): ?> 
         <!-- Blog post-->
         <div class="card mb-4">
             <img class="card-img-top" src="https://via.placeholder.com/750x300" alt="Card image cap" />
             <div class="card-body">
-                <h2 class="card-title">Post Title</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
+                <h2 class="card-title"><?= $post->title ?></h2>
+                <p class="card-text"><?= $post->excerpt ?></p>
                 <a class="btn btn-primary" href="#!">Read More →</a>
             </div>
             <div class="card-footer text-muted">
@@ -18,37 +19,17 @@
                 <a href="#!">Start Bootstrap</a>
             </div>
         </div>
-        <!-- Blog post-->
-        <div class="card mb-4">
-            <img class="card-img-top" src="https://via.placeholder.com/750x300" alt="Card image cap" />
-            <div class="card-body">
-                <h2 class="card-title">Post Title</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                <a class="btn btn-primary" href="#!">Read More →</a>
-            </div>
-            <div class="card-footer text-muted">
-                Posted on January 1, 2021 by
-                <a href="#!">Start Bootstrap</a>
-            </div>
-        </div>
-        <!-- Blog post-->
-        <div class="card mb-4">
-            <img class="card-img-top" src="https://via.placeholder.com/750x300" alt="Card image cap" />
-            <div class="card-body">
-                <h2 class="card-title">Post Title</h2>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam. Dicta expedita corporis animi vero voluptate voluptatibus possimus, veniam magni quis!</p>
-                <a class="btn btn-primary" href="#!">Read More →</a>
-            </div>
-            <div class="card-footer text-muted">
-                Posted on January 1, 2021 by
-                <a href="#!">Start Bootstrap</a>
-            </div>
-        </div>
+        <?php endforeach; ?>
+        
         <!-- Pagination-->
-        <ul class="pagination justify-content-center mb-4">
-            <li class="page-item"><a class="page-link" href="#!">← Older</a></li>
-            <li class="page-item disabled"><a class="page-link" href="#!">Newer →</a></li>
-        </ul>
+        <?= \yii\widgets\LinkPager::widget([
+            'pagination' => $pagination,
+            'maxButtonCount' => 5,
+            'activePageCssClass' => 'active',
+            'linkContainerOptions' => ['class' => 'page-item'],
+            'linkOptions' => ['class' => 'page-link'],
+            'disabledListItemSubTagOptions' => ['tag' => 'a', 'class' => 'page-link'],
+        ]) ?>
     </div>
     <!-- Side widgets-->
     <div class="col-md-4">
