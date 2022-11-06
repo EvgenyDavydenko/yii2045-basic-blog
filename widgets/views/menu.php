@@ -4,7 +4,7 @@
     <div class="card-body">
         <ul class="list-unstyled mb-0">
             <?php foreach ($cats as $cat) : ?>
-            <li><a href="#"><?= $cat['name']?></a></li>
+            <li><a href="<?= \yii\helpers\Url::to(['blog/category', 'id'=>$cat['id']])?>"><?= $cat['name']?></a></li>
             <?php endforeach ?>
         </ul>
     </div>
