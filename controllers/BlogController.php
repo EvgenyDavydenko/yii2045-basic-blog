@@ -32,8 +32,10 @@ class BlogController extends Controller
         ]);
     }
 
-    public function actionPost()
+    public function actionPost($id)
     {
-        return $this->render('post');
+        //$id = \Yii::$app->request->get('id');
+        $post = Post::find()->where(['id' => $id])->one();
+        return $this->render('post', ['post' => $post]);
     }
 }
