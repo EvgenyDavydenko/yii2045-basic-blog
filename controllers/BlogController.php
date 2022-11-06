@@ -14,4 +14,9 @@ class BlogController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionPost()
+    {
+        return $this->render('post');
+    }
 }
