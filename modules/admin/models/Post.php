@@ -25,6 +25,11 @@ class Post extends \yii\db\ActiveRecord
         return 'post';
     }
 
+    public function getCat()
+    {
+        return $this->hasOne(Category::class, ['id' => 'category_id']);
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -45,10 +50,10 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'category_id' => 'Category ID',
-            'title' => 'Title',
-            'excerpt' => 'Excerpt',
-            'text' => 'Text',
+            'category_id' => 'Категория',
+            'title' => 'Заголовок',
+            'excerpt' => 'Цитата',
+            'text' => 'Содержание',
             'keywords' => 'Keywords',
             'description' => 'Description',
         ];

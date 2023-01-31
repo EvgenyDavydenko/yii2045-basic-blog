@@ -18,3 +18,4 @@
 16. Установил компонент [Asset Bundle of Startbootstrap SB Admin 2](https://github.com/hoaaah/yii2-startbootstrap-sb-admin-2-asset)
 17. Сгенерировал CRUD для постов
 18. Сгенерировал CRUD для категорий
+19. Исправил вывод категории с id на название

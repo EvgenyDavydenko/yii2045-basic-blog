@@ -1,6 +1,7 @@
 <?php
 
 use app\modules\admin\models\Post;
+use app\modules\admin\models\Category;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
@@ -27,10 +28,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            // ['class' => 'yii\grid\SerialColumn'],
 
-            'id',
-            'category_id',
+            // 'id',
+            // 'category_id',
+            [
+                'attribute' => 'category_id',
+                'filter' => Category::find()->select(['name', 'id'])->indexBy('id')->column(),
+                'value' => 'cat.name',
+            ],
             'title',
             'excerpt',
             'text:ntext',
