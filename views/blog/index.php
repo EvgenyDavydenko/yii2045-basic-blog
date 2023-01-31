@@ -13,10 +13,11 @@
                 <h2 class="card-title"><?= $post->title ?></h2>
                 <p class="card-text"><?= $post->excerpt ?></p>
                 <a class="btn btn-primary" href="<?= \yii\helpers\Url::to(['blog/post', 'id'=>$post->id])?>">Read More →</a>
+                
             </div>
             <div class="card-footer text-muted">
-                Posted on January 1, 2021 by
-                <a href="#!">Start Bootstrap</a>
+                Категория:
+                <a href="<?= \yii\helpers\Url::to(['blog/category', 'id'=>$post->cat->id])?>"><?= $post->cat->name?></a>
             </div>
         </div>
         <?php endforeach; ?>
