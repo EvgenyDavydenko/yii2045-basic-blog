@@ -15,3 +15,4 @@
 13. некоторые исправления
 14. Ссылка на категорию поста на домашней странице блога
 15. Сгенерировал модуль админки
+16. Установил компонент [Asset Bundle of Startbootstrap SB Admin 2](https://github.com/hoaaah/yii2-startbootstrap-sb-admin-2-asset)

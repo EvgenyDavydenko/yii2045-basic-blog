@@ -14,6 +14,7 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
+            'layout' => '@vendor/hoaaah/yii2-startbootstrap-sb-admin-2-asset/views-examples/views/layouts/main.php',
         ],
     ],
     'components' => [
