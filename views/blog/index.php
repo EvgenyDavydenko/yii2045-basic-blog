@@ -36,13 +36,15 @@
         <!-- Search widget-->
         <div class="card my-4">
             <h5 class="card-header">Search</h5>
-            <div class="card-body">                
-                <div class="input-group">
+            <div class="card-body">
+                
                 <form action = "<?= \yii\helpers\Url::to(['blog/search']) ?>" method="get">
+                <div class="input-group">
                     <input class="form-control" name="id" type="text" placeholder="Search for..." />
                     <span class="input-group-append"><button class="btn btn-secondary" type="submit">Go!</button></span>
-                </form>
                 </div>
+                </form>
+                
             </div>
         </div>
         <!-- Categories widget-->
